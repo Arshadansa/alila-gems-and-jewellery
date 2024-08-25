@@ -1,0 +1,105 @@
+import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { GrFacebookOption } from "react-icons/gr";
+import { IoLogoInstagram } from "react-icons/io";
+import { MdOutlineMailOutline } from "react-icons/md";
+
+function TopContact() {
+  return (
+    <section className="bg-black">
+      <div className="max-w-screen-xl flex items-center justify-between px-6 mx-auto ">
+        <div>
+          <span className="text-white">15 Harakon st. Ramat Gan</span>
+        </div>
+        <div className="flex  gap-1 items-center">
+          <div>
+            <MdOutlineMailOutline size={20} className="text-white"/>
+          </div>
+          <div>
+            <GrFacebookOption size={20} className="text-white" />
+          </div>
+          <div>
+            <IoLogoInstagram size={20} className="text-white" />
+          </div>
+          <div>
+            <FaWhatsapp size={20} className="text-white"/>
+          </div>
+        </div>
+        <div>
+          <span className="text-white">+972-54-9929997</span>
+        </div>
+        <div>
+          <button
+            id="dropdownHoverButton"
+            data-dropdown-toggle="dropdownHover"
+            data-dropdown-trigger="hover"
+            class="text-white  border    font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            type="button"
+          >
+            GBP{" "}
+            <svg
+              class="w-2.5 h-2.5 ms-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="dropdownHover"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownHoverButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  ILS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  USD
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  EUR
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  GBP
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default TopContact;
