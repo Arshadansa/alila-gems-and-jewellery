@@ -1,45 +1,94 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Descrition from "./Descrition";
 
 function Silder() {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 4, // optional, default to 1.
-      partialVisibilityGutter: 10 // this is needed to tell the amount of px that should be visible.
-
+      items: 5,
+      slidesToSlide: 5,
+      partialVisibilityGutter: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      items: 3,
+      slidesToSlide: 3,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1, // optional, default to 1.
+      slidesToSlide: 1,
     },
   };
+
   return (
-    <div className=" overflow-hidden">
+    <div className="overflow-hidden">
       <Carousel
         responsive={responsive}
         autoPlay={true}
         swipeable={true}
         draggable={true}
-        // showDots={true}
         infinite={true}
         partialVisible={true}
+        showDots={false} // Hides dots
+        arrows={false}  // Hides arrows
         dotListClass="custom-dot-list-style"
+        className="hover:cursor-pointer"
       >
-        
-        <div className="text-white">Item 1</div>
-        <div className="text-white">Item 2</div>
-        <div className="text-white">Item 3</div>
-        <div className="text-white">Item 4</div>
+        <div className="relative group">
+          <img
+            className="object-cover w-full h-48"
+            src="https://www.gzahav.com/cdn/shop/products/22K-flower-diamonds-ring-1024X1024-70P-darker-v2_600x.jpg?v=1607620246"
+            alt="Ring"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xl">£1,265.96</p>
+          </div>
+        </div>
+        <div className="relative group">
+          <img
+            className="object-cover w-full h-48"
+            src="https://www.gzahav.com/cdn/shop/products/22K-flower-diamonds-ring-1024X1024-70P-darker-v2_600x.jpg?v=1607620246"
+            alt="Ring"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xl">£1,265.96</p>
+          </div>
+        </div>
+        <div className="relative group">
+          <img
+            className="object-cover w-full h-48"
+            src="https://www.gzahav.com/cdn/shop/products/22K-flower-diamonds-ring-1024X1024-70P-darker-v2_600x.jpg?v=1607620246"
+            alt="Ring"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xl">£1,265.96</p>
+          </div>
+        </div>
+        <div className="relative group">
+          <img
+            className="object-cover w-full h-48"
+            src="https://www.gzahav.com/cdn/shop/products/22K-flower-diamonds-ring-1024X1024-70P-darker-v2_600x.jpg?v=1607620246"
+            alt="Ring"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xl">£1,265.96</p>
+          </div>
+        </div>
+        <div className="relative group">
+          <img
+            className="object-cover w-full h-48"
+            src="https://www.gzahav.com/cdn/shop/products/22K-flower-diamonds-ring-1024X1024-70P-darker-v2_600x.jpg?v=1607620246"
+            alt="Ring"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-white text-xl">£1,265.96</p>
+          </div>
+        </div>
       </Carousel>
+      <Descrition />
     </div>
   );
 }

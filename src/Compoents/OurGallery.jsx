@@ -38,8 +38,8 @@ function OurGallery() {
   };
 
   return (
-    <section ref={sectionRef}>
-      <div className="max-w-screen-full mx-auto  h-96 ">
+    <section ref={sectionRef} className="pb-16">
+      <div className="max-w-screen-full mx-auto  ">
         <div className="text-center pb-4 bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
           <motion.h3
             initial="hidden"

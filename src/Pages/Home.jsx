@@ -6,6 +6,7 @@ import Main from "../Compoents/Main";
 import Category from "../Compoents/Category";
 import OurStory from "../Compoents/OurStory";
 import OurGallery from "../Compoents/OurGallery";
+import ProductList from "../Compoents/ProductList";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <Category />
       <OurStory />
       <OurGallery />
+      <ProductList />
       <Footer />
     </section>
   );

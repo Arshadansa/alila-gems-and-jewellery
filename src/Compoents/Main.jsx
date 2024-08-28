@@ -1,15 +1,20 @@
 import React from "react";
+import mainvideo from "../Assets/Video/main.mp4";
 
 function Main() {
   return (
-    <section className="w-full">
-      <div className="relative w-full h-[90vh]  overflow-hidden">
-        <img
-          className="absolute inset-0 object-cover  object-center w-full h-full"
-          src="https://www.gzahav.com/cdn/shop/files/DSC08366-Edit-2_56203ada-c3fa-4344-a641-388fcf4050be_800x.jpg?v=1685804578"
-          alt="Jewelry"
-        />
-      </div>
+    <section className="w-full ">
+      <div className="relative w-full overflow-hidden pb-[48.25%]"> 
+      <video
+        src={mainvideo}
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
     </section>
   );
 }
