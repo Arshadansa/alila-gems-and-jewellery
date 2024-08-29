@@ -10,15 +10,12 @@ import ProductList from "../Compoents/ProductList";
 
 function Home() {
   return (
-    <section className="bg-black overflow-hidden">
-      <TopContact />
-      <Navbar />
+    <section className="">
       <Main />
       <Category />
       <OurStory />
       <OurGallery />
       <ProductList />
-      <Footer />
     </section>
   );
 }

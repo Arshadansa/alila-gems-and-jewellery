@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const OurStory = () => {
   const [inView, setInView] = useState(false);
@@ -101,9 +102,11 @@ const OurStory = () => {
               Our commitment to quality and timeless design ensures each piece
               is a blend of traditional craftsmanship and modern elegance.
             </p>
-            <button className="border text-md w-fit py-2 px-8 rounded-sm hover:underline border-blue-600 bg-black text-white">
-              Read More
-            </button>
+            <Link to="/about">
+              <button className="border text-md w-fit py-2 px-8 rounded-sm hover:underline border-blue-600 bg-black text-white">
+                Read More
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>
