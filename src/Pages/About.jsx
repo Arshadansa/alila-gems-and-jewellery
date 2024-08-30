@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import OurStoryComponent from "../Compoents/OurStoryComponent";
+
 function About() {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
@@ -12,7 +11,10 @@ function About() {
       ([entry]) => {
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.2 } // Trigger when at least 20% of the element is visible
+      {
+        threshold: 0.1,
+        rootMargin: "0px", // Consider adjusting the root margin to trigger earlier/later
+      }
     );
 
     if (sectionRef.current) {
@@ -25,6 +27,7 @@ function About() {
       }
     };
   }, []);
+
   const headingVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -36,6 +39,7 @@ function About() {
       },
     },
   };
+
   const data = [
     {
       id: 1,
@@ -52,7 +56,6 @@ function About() {
       image:
         "https://www.gzahav.com/cdn/shop/files/birx_1024X1024_bigger_600x.jpg?v=1614291551",
       heading: "Our Craftsmanship",
-
       description:
         "Our skilled artisans use age-old techniques to bring out the best in every gemstone. Each piece undergoes rigorous quality checks to ensure it meets our high standards.",
       description1:
@@ -71,17 +74,17 @@ function About() {
   ];
 
   return (
-    <section ref={sectionRef} className="pb-16 ">
-      <div className="text-center pb-4 bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
+    <section  className="pb-16 pt-36">
+      <div ref={sectionRef} className="text-center pb-4  bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
         <motion.h3
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={headingVariants}
           className="text-white leading-relaxed text-5xl"
         >
-          About us
+          About Us
         </motion.h3>
-        <span className="text-white leading-loose mt-4">
+        <span className="text-white leading-loose mt-4 block">
           "Crafting Excellence in Gems and Jewelry for Every Occasion"
         </span>
         <hr className="border mt-5 border-red-500 w-32 mx-auto" />

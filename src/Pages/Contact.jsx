@@ -83,7 +83,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full p-3 border-buttonborder border hover:underline bg-black rounded  transition-colors"
+              className="w-40 p-3 border-buttonborder border hover:underline bg-black rounded  transition-colors"
             >
               Submit
             </button>

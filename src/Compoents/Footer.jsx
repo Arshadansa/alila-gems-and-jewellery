@@ -38,7 +38,7 @@ function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 flex flex-col gap-4 md:mb-0">
             <Link to="/" className="flex text-white text-2xl items-center">
-              Alilaaa gems and jewellery
+              Alila gems and jewellery
             </Link>
             <div className="">
               <form action="" className="flex pl-0 flex-col gap-3 items-start">
@@ -64,7 +64,7 @@ function Footer() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-black hover:underline text-white px-8 py-2 border border-buttonborder"
+                  className=" hover:underline text-white px-8 py-2 border border-buttonborder"
                 >
                   Signup
                 </button>

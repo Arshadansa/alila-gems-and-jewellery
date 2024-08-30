@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom"; // Import Link from react-router-dom
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
@@ -24,26 +24,68 @@ function Navbar() {
     }, 200); // Adjust delay as needed
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-black border-gray-200 dark:bg-gray-900">
+    <nav
+      className={`fixed  left-0 w-full z-10 transition-opacity duration-300 ${
+        isScrolled
+          ? "bg-black bg-opacity-40 top-0 transition-all  ease-in-out"
+          : "bg-black top-11 transition-all ease-in-out"
+      }`}
+    >
       <div className="max-w-screen-xl flex h-32 flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link
+          to="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src={logo} alt="Logo" className="object-cover w-60 h-24" />
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="flex gap-3">
-            <div className="flex flex-col items-center">
-              <CiSearch size={24} className="text-white" />
-              <span className="text-white">Search</span>
+            <div className="flex flex-col items-center group hover:cursor-pointer">
+              <CiSearch
+                size={20}
+                className="text-white group-hover:text-primary transition-colors duration-300"
+              />
+              <span className="text-white  group-hover:text-primary transition-colors duration-300">
+                Search
+              </span>
             </div>
-            <div className="flex flex-col items-center">
-              <MdAccountCircle size={24} className="text-white" />
-              <span className="text-white">Login</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <AiFillShopping size={24} className="text-white" />
-              <span className="text-white">Cart</span>
-            </div>
+            <Link to={"/account/login"}>
+              <div className="flex flex-col items-center group">
+                <MdAccountCircle
+                  size={20}
+                  className="text-white group-hover:text-primary transition-colors duration-300"
+                />
+                <span className="text-white group-hover:text-primary transition-colors duration-300">
+                  Login
+                </span>
+              </div>
+            </Link>
+
+            <Link to={"/cart"}>
+              <div className="flex flex-col items-center group">
+                <AiFillShopping
+                  size={20}
+                  className="text-white group-hover:text-primary transition-colors duration-300"
+                />
+                <span className="text-white group-hover:text-primary transition-colors duration-300">
+                  Cart
+                </span>
+              </div>
+            </Link>
           </div>
 
           <button
@@ -79,7 +121,9 @@ function Navbar() {
             <li>
               <Link
                 to="/"
-                className="block py-2 px-3 hover:text-primary md:p-0 text-white rounded md:bg-transparent"
+                className={`"block py-2 px-3  ${
+                  location.pathname === "/" ? "text-primary" : "text-white"
+                } md:p-0 text-white rounded md:bg-transparent"`}
                 aria-current="page"
               >
                 Home
@@ -88,7 +132,9 @@ function Navbar() {
             <li>
               <Link
                 to="/about"
-                className="block py-2 px-3 md:p-0 hover:text-primary text-white rounded hover:bg-gray-100 md:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={`"block py-2 px-3  ${
+                  location.pathname === "/about" ? "text-primary" : "text-white"
+                } md:p-0 text-white rounded md:bg-transparent"`}
               >
                 About
               </Link>
@@ -131,7 +177,9 @@ function Navbar() {
             <li>
               <Link
                 to="/contact"
-                className="block py-2 hover:text-primary px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className={`"block py-2 px-3  ${
+                  location.pathname === "/contact" ? "text-primary" : "text-white"
+                } md:p-0 text-white rounded md:bg-transparent"`}
               >
                 Contact
               </Link>

@@ -6,8 +6,8 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 function TopContact() {
   return (
-    <section className="bg-black">
-      <div className="max-w-screen-xl flex items-center justify-between px-6 mx-auto ">
+    <section className="">
+      <div className="max-w-screen-xl  relative z-30 flex items-center justify-between px-6 py-2 mx-auto ">
         <div>
           <span className="text-white">15 Harakon st. Ramat Gan</span>
         </div>
@@ -33,7 +33,7 @@ function TopContact() {
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            class="text-white  border    font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="text-white  border    relative z-30 font-medium rounded-lg text-sm px-4 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             type="button"
           >
             GBP{" "}
@@ -56,10 +56,10 @@ function TopContact() {
 
           <div
             id="dropdownHover"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            class=" hidden  relative z-30  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
           >
             <ul
-              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              class="py-2 relative z-30 text-sm text-gray-700 dark:text-gray-200"
               aria-labelledby="dropdownHoverButton"
             >
               <li>

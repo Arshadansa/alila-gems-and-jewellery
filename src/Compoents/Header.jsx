@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <>
+    <section>
       <TopContact />
       <Navbar />
-    </>
+    </section>
   );
 }
 
