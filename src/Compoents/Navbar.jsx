@@ -7,9 +7,15 @@ import { MdAccountCircle } from "react-icons/md";
 import { AiFillShopping } from "react-icons/ai";
 import logo from "../Assets/Images/logo.png";
 
+import { useCart } from "../Context/cartContext";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
+
+  const { itemCount } = useCart();
+  console.log(itemCount);
+  
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -39,13 +45,13 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed  left-0 w-full z-10 transition-opacity duration-300 ${
+      className={`fixed   left-0 w-full z-10 transition-opacity duration-300 ${
         isScrolled
-          ? "bg-black bg-opacity-40 top-0 transition-all  ease-in-out"
-          : "bg-black top-11 transition-all ease-in-out"
+          ? "bg-black bg-opacity-40 top-0 transition-all  duration-500 ease-in-out"
+          : "bg-black top-11 transition-all duration-500 ease-in-out"
       }`}
     >
-      <div className="max-w-screen-xl flex h-32 flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl  flex h-32 flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -76,11 +82,12 @@ function Navbar() {
             </Link>
 
             <Link to={"/cart"}>
-              <div className="flex flex-col items-center group">
+              <div className="flex relative flex-col items-center group">
                 <AiFillShopping
-                  size={20}
+                  size={24}
                   className="text-white group-hover:text-primary transition-colors duration-300"
                 />
+                <span className="text-white rounded-full px-1.5 bottom-8 left-4 bg-red-600 absolute text-sm">{itemCount}</span>
                 <span className="text-white group-hover:text-primary transition-colors duration-300">
                   Cart
                 </span>
@@ -121,9 +128,11 @@ function Navbar() {
             <li>
               <Link
                 to="/"
-                className={`"block py-2 px-3  ${
-                  location.pathname === "/" ? "text-primary" : "text-white"
-                } md:p-0 text-white rounded md:bg-transparent"`}
+                className={`block py-2 px-3  ${
+                  location.pathname === "/"
+                    ? "text-primary"
+                    : "text-white hover:text-primary"
+                } md:p-0  rounded md:bg-transparent`}
                 aria-current="page"
               >
                 Home
@@ -132,13 +141,16 @@ function Navbar() {
             <li>
               <Link
                 to="/about"
-                className={`"block py-2 px-3  ${
-                  location.pathname === "/about" ? "text-primary" : "text-white"
-                } md:p-0 text-white rounded md:bg-transparent"`}
+                className={`block py-2 px-3 ${
+                  location.pathname === "/about"
+                    ? "text-primary"
+                    : "text-white hover:text-primary"
+                } md:p-0 rounded md:bg-transparent`}
               >
                 About
               </Link>
             </li>
+
             <li>
               <div
                 className="relative inline-block text-left"
@@ -166,10 +178,18 @@ function Navbar() {
                   }`}
                 >
                   <div className="grid text-black grid-cols-4">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
+                    <Link to="/collections/rings">
+                      <div>Product-1</div>
+                    </Link>
+                    <Link to="/collections/rings">
+                      <div>Product-2</div>
+                    </Link>
+                    <Link to="/collections/rings">
+                      <div>Product-3</div>
+                    </Link>
+                    <Link to="/collections/rings">
+                      <div>Product-4</div>
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -178,8 +198,10 @@ function Navbar() {
               <Link
                 to="/contact"
                 className={`"block py-2 px-3  ${
-                  location.pathname === "/contact" ? "text-primary" : "text-white"
-                } md:p-0 text-white rounded md:bg-transparent"`}
+                  location.pathname === "/contact"
+                    ? "text-primary"
+                    : "text-white hover:text-primary"
+                } md:p-0  rounded md:bg-transparent"`}
               >
                 Contact
               </Link>

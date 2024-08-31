@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ForgotPassword() {
   return (
-    <section className="max-w-screen-xl py-20 gap-10 flex flex-col md:flex-row mx-auto">
+    <section className="max-w-screen-xl  py-24 gap-6 flex flex-col md:flex-row justify-center items-center mx-auto">
       <div className="md:w-1/2 bg-black  text-white flex flex-col justify-start  items-center">
         <div className=" w-full mb-8">
           <h1 className="text-2xl font-semibold mt-4">Reset Password</h1>

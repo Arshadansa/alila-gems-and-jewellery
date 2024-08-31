@@ -10,7 +10,7 @@ function Layout() {
       <Header />
 
       {/* Main content */}
-      <main className="flex-grow">
+      <main className="flex-grow mt-28 mb-24">
         <Outlet />
       </main>
 

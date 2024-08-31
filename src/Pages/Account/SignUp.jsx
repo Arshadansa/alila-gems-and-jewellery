@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
-    <section className="max-w-screen-xl py-20 gap-10 flex flex-col md:flex-row mx-auto">
+    <section className="max-w-screen-xl pt-20  gap-10 flex flex-col md:flex-row mx-auto">
       <div className="md:w-1/2 bg-black  text-white flex flex-col justify-start  items-center">
         <div className="text-center mb-8">
           {/* <p className="text-lg">15 Harakon st. Ramat Gan</p> */}

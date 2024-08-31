@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="py-20 bg-black text-white flex flex-col justify-center items-center">
+    <div className=" bg-black text-white flex flex-col justify-center items-center">
       <div className="text-center mb-8">
         {/* <p className="text-lg">15 Harakon st. Ramat Gan</p> */}
         <img

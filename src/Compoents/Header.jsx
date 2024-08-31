@@ -6,7 +6,7 @@ function Header() {
   return (
     <section>
       <TopContact />
-      <Navbar />
+      {/* <Navbar /> */}
     </section>
   );
 }

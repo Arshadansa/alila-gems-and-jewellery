@@ -74,7 +74,7 @@ function About() {
   ];
 
   return (
-    <section  className="pb-16 pt-36">
+    <section  className="">
       <div ref={sectionRef} className="text-center pb-4  bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
         <motion.h3
           initial="hidden"

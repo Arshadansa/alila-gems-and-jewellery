@@ -7,7 +7,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 function TopContact() {
   return (
     <section className="">
-      <div className="max-w-screen-xl  relative z-30 flex items-center justify-between px-6 py-2 mx-auto ">
+      <div className="max-w-screen-xl  relative z-30 flex items-center justify-between px-6 py-3 mx-auto ">
         <div>
           <span className="text-white">15 Harakon st. Ramat Gan</span>
         </div>

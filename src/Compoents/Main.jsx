@@ -3,7 +3,7 @@ import mainvideo from "../Assets/Video/main.mp4";
 
 function Main() {
   return (
-    <section className="w-full ">
+    <section className="w-full  ">
       <div className="relative w-full overflow-hidden pb-[48.25%]"> 
       <video
         src={mainvideo}

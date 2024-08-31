@@ -6,7 +6,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <section className=" py-32 max-w-screen-xl mx-auto bg-black text-white flex flex-col ">
+    <section className=" pt-24 max-w-screen-xl mx-auto bg-black text-white flex flex-col ">
       <div className="flex gap-6 justify-between w-full">
         <div className="mt-3 w-1/2 pl-2 ">
           <h2 className="text-2xl md:text-4xl font-bold">
