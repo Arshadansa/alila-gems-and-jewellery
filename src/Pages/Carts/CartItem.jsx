@@ -21,7 +21,7 @@ const CartItem = ({ item, removeFromCart }) => {
       <div>
         <p className="font-semibold text-lg leading-10 text-white">{item.title}</p>
         <p className="text-md text-gray-600">
-          {item.quantity} x ${item.price.toFixed(2)} = ${(item.quantity * item.price).toFixed(2)}
+          {item.quantity} x ${item.price} = ${(item.quantity * item.price).toFixed(2)}
         </p>
       </div>
       <div className="flex items-center gap-2">

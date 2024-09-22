@@ -24,7 +24,7 @@ function Silder() {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-full">
       <Carousel
         responsive={responsive}
         autoPlay={true}

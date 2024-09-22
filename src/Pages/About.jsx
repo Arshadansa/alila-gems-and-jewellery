@@ -43,39 +43,41 @@ function About() {
   const data = [
     {
       id: 1,
-      image:
-        "https://www.gzahav.com/cdn/shop/files/set_1024X1024_00abb1f2-cd8e-440b-aeb9-6059e04ff180_600x.jpg?v=1681554737",
-      heading: "Our Story",
-      description:
-        "Since 1992, Alilaaa Gems and Jewellery has specialized in crafting, wholesaling, and retailing exquisite gems and jewelry. Our commitment to quality and timeless design ensures each piece is a blend of traditional craftsmanship and modern elegance.",
-      description1:
-        "At Alilaaa Gems and Jewellery, we pride ourselves on being a premier manufacturer, wholesaler, and retailer of exquisite gems and jewelry. Our commitment to quality and craftsmanship ensures that every piece we create is not just a product but a piece of art. From sourcing the finest raw materials to meticulously designing and crafting stunning jewelry, we offer a comprehensive range of options to meet every need.",
+      image: "https://www.gzahav.com/cdn/shop/files/set_1024X1024_00abb1f2-cd8e-440b-aeb9-6059e04ff180_600x.jpg?v=1681554737",
+      heading: "Embracing India's Richness",
+      description: "At Alila, we bring you the richness and beauty of India, especially from Rajasthan, the land of the Maharajas, known for its stunning gems and jewellery. Our collections are crafted to enhance your beauty and carry forward the traditions of grace and elegance that have been cherished for centuries.",
+      additionalContent: "At Alila Gems and Jewellery, we pride ourselves on being a premier manufacturer, wholesaler, and retailer of exquisite gems and jewelry. Our commitment to quality and craftsmanship ensures that every piece we create is not just a product but a piece of art. From sourcing the finest raw materials to meticulously designing and crafting stunning jewelry, we offer a comprehensive range of options to meet every need.",
     },
     {
       id: 2,
-      image:
-        "https://www.gzahav.com/cdn/shop/files/birx_1024X1024_bigger_600x.jpg?v=1614291551",
-      heading: "Our Craftsmanship",
-      description:
-        "Our skilled artisans use age-old techniques to bring out the best in every gemstone. Each piece undergoes rigorous quality checks to ensure it meets our high standards.",
-      description1:
-        "We believe that the essence of luxury lies in the details. Our jewelry is crafted with precision, using only the finest materials and techniques to ensure that every creation is of the highest quality. Each piece tells a story of meticulous craftsmanship and attention to detail.",
+      image: "https://www.gzahav.com/cdn/shop/files/birx_1024X1024_bigger_600x.jpg?v=1614291551",
+      heading: "Our Commitment to Heritage",
+      description: "Under the leadership of Ms. Alvira Ali, along with her family, Alila has been dedicated to preserving and revitalizing India's rich jewellery heritage. With years of expertise, Ms. Alvira and her team of skilled artisans are committed to showcasing the forgotten beauty of ancient India through their exquisite craftsmanship.",
+      additionalContent: "Over the years, we have successfully developed a trusted brand name and diverse customer base. We cater to the needs of not only the big brands in this industry but also budding individuals with the same dedication. As a result, we have maintained a strong trading relationship with gemstone buyers from the USA, UK, Australia, Japan, China, Thailand, and many other countries.",
     },
     {
       id: 3,
-      image:
-        "https://www.gzahav.com/cdn/shop/files/0.1_diamond-1080X1080-crop2_600x.jpg?v=1614306899",
-      heading: "Our Commitment",
-      description:
-        "We are dedicated to providing exceptional service and ensuring that every customer has a memorable experience with our brand.",
-      description1:
-        "Customer satisfaction is at the heart of everything we do. We are committed to providing exceptional service and creating an unforgettable experience for each of our customers. From personalized consultations to aftercare, we are here to support you every step of the way.",
+      image: "https://www.gzahav.com/cdn/shop/files/0.1_diamond-1080X1080-crop2_600x.jpg?v=1614306899",
+      heading: "Trusted Brand with Global Reach",
+      description: "Over the years, we have successfully developed a trusted brand name and diverse customer base. We cater to the needs of not only the big brands in this industry but also budding individuals with the same dedication. As a result, we have maintained a strong trading relationship with gemstone buyers from the USA, UK, Australia, Japan, China, Thailand, and many other countries.",
+      additionalContent: "Customer satisfaction is at the heart of everything we do. We are committed to providing exceptional service and creating an unforgettable experience for each of our customers. From personalized consultations to aftercare, we are here to support you every step of the way.",
+    },
+    {
+      id: 4,
+      image: "https://www.gzahav.com/cdn/shop/files/0.1_diamond-1080X1080-crop2_600x.jpg?v=1614306899",
+      heading: "A Diverse Selection for Every Taste",
+      description: "We offer a diverse selection to cater to varied tastes because we believe that no two people think alike. Our vast range includes gold ornaments, rough stones, vintage silver pieces, precious and semi-precious stones, diamonds, and much more. There's something for everyone to admire and cherish.",
+      additionalContent: "Explore our unique offerings, from intricately designed gold jewelry to ethically sourced gemstones. Each piece is crafted with passion, reflecting the rich heritage and artistry of India, ensuring that every customer finds something special to cherish.",
     },
   ];
+  
 
   return (
-    <section  className="">
-      <div ref={sectionRef} className="text-center pb-4  bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
+    <section className="">
+      <div
+        ref={sectionRef}
+        className="text-center pb-4  bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent"
+      >
         <motion.h3
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -96,7 +98,6 @@ function About() {
           img={item.image}
           h={item.heading}
           desc={item.description}
-          desc1={item.description1}
         />
       ))}
     </section>

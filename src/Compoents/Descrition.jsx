@@ -38,19 +38,19 @@ function Descrition() {
     },
   };
   return (
-    <section ref={sectionRef} className="pt-16">
-      <div className="max-w-screen-full mx-auto  ">
-        <div className="text-center pb-4 ">
+    <section ref={sectionRef} className="w-full mt-24 lg:pt-16">
+        <div className="text-center pb-4 bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
           <motion.h3
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={headingVariants}
-            className="text-white leading-relaxed text-3xl"
+            className="text-white leading-relaxed text-3xl lg:text-5xl"
           >
             Monthly Design Highlight
           </motion.h3>
           <hr className="border mt-5 border-red-500 w-32 mx-auto" />
         </div>
+      <div className=" pt-4   ">
         <motion.div
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -60,7 +60,7 @@ function Descrition() {
           <div className="p-3">
             <ProductSilder />
           </div>
-          <div className="text-white text-lg flex flex-col gap-6">
+          <div className="text-white md:text-lg p-3 lg:p-0 flex flex-col gap-6">
             <div className="flex flex-col">
               <span className="text-2xl">
                 'Lotus' Blue Topaz and Diamond Pendant{" "}

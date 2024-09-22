@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useContext, useState, useMemo, useCallback, useEffect } from 'react';
 
 // Create the context
@@ -24,7 +26,7 @@ const loadCartFromStorage = () => {
   }
 };
 
-// Save cart to localStorage
+// Save cart to localStorage (debounced)
 const saveCartToStorage = (cart) => {
   try {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -35,24 +37,35 @@ const saveCartToStorage = (cart) => {
 
 // Create a provider component
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(loadCartFromStorage);
+  const [cart, setCart] = useState([]);
   const [notification, setNotification] = useState({ type: '', message: '' });
 
+  // Load cart from localStorage on first render
   useEffect(() => {
-    saveCartToStorage(cart);
+    const storedCart = loadCartFromStorage();
+    setCart(storedCart);
+  }, []);
+
+  // Save cart to localStorage with debounce
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      saveCartToStorage(cart);
+    }, 300); // Debounced save
+
+    return () => clearTimeout(handler);
   }, [cart]);
 
+  // Add to cart
   const addToCart = useCallback((product) => {
+    console.log('Adding to cart:', product);
     setCart((prevCart) => {
       const existingProductIndex = prevCart.findIndex(item => item.id === product.id);
       const updatedCart = [...prevCart];
 
       if (existingProductIndex > -1) {
-        // Product already exists in the cart, update quantity
         updatedCart[existingProductIndex].quantity += product.quantity;
         setNotification({ type: 'update', message: `${product.title} quantity updated` });
       } else {
-        // New product, add to cart
         updatedCart.push(product);
         setNotification({ type: 'add', message: `${product.title} added to cart` });
       }
@@ -61,10 +74,12 @@ export const CartProvider = ({ children }) => {
     });
   }, []);
 
+  // Remove from cart
   const removeFromCart = useCallback((productId) => {
+    console.log('Removing from cart:', productId);
     setCart((prevCart) => {
-      const item = prevCart.find(item => item.id === productId);
       const updatedCart = prevCart.filter((item) => item.id !== productId);
+      const item = prevCart.find(item => item.id === productId);
       if (item) {
         setNotification({ type: 'remove', message: `${item.title} removed from cart` });
       }
@@ -72,6 +87,7 @@ export const CartProvider = ({ children }) => {
     });
   }, []);
 
+  // Clear cart
   const clearCart = useCallback(() => {
     setCart([]);
     setNotification({ type: 'clear', message: 'Cart cleared' });
@@ -90,5 +106,5 @@ export const CartProvider = ({ children }) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-// Create a custom hook to use the CartContext
+// Custom hook to use the CartContext
 export const useCart = () => useContext(CartContext);

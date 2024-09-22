@@ -1,5 +1,4 @@
-// src/components/Cart.js
-import React, { useMemo } from "react";
+import  { useMemo } from "react";
 import { useCart } from "../../Context/cartContext";
 import CartItem from "./CartItem";
 import { Link, useNavigate } from "react-router-dom";
@@ -38,7 +37,7 @@ const Cart = () => {
               removeFromCart={removeFromCart}
             />
           ))}
-          <h3 className="text-xl font-semibold mt-4">Total: ${totalPrice}</h3>
+          <h3 className="text-xl text-white font-semibold mt-4">Total: ${totalPrice}</h3>
           <div className="w-full flex  justify-between">
             <button
               onClick={clearCart}

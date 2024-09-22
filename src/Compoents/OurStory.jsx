@@ -66,21 +66,22 @@ const OurStory = () => {
   };
 
   return (
-    <section className="py-24 overflow-hidden" ref={sectionRef}>
-      <div className="max-w-screen-xl mx-auto">
+    <section className="md:py-24 pb-6  md:p-0 overflow-hidden" ref={sectionRef}>
+      <div className="text-center pb-4 bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
         <motion.h2
-          className="text-white text-center text-5xl"
+          className="text-white  text-center text-3xl md:text-5xl"
           variants={headingVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
           The Story Behind Us
         </motion.h2>
-        <hr className="border mt-5 border-red-500 w-32 mx-auto" />
-
-        <div className="my-20 flex items-center justify-center">
+        <hr className="border mt-5 mb-3 lg:mb-0 border-red-500 w-32 mx-auto" />
+      </div>
+      <div className="max-w-screen-xl   mx-auto">
+        <div className="md:my-20  p-3 flex gap-5 md:gap-0 md:flex-row flex-col items-center justify-center">
           <motion.div
-            className="w-1/2"
+            className="md:w-1/2"
             variants={imageVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -88,15 +89,16 @@ const OurStory = () => {
             <img
               src="https://www.gzahav.com/cdn/shop/files/DSC02211_600x.jpg?v=1685808698"
               alt="Our Story"
+              className="object-contain"
             />
           </motion.div>
           <motion.div
-            className="w-1/2 h-full flex flex-col gap-3"
+            className="md:w-1/2 h-full p-3 lg:p-0 flex lg:items-start items-center flex-col gap-3"
             variants={contentVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            <p className="text-white text-lg">
+            <p className="text-white  text-justify lg: md:text-lg">
               Since 1992, Alilaaa Gems and Jewellery has specialized in
               crafting, wholesaling, and retailing exquisite gems and jewelry.
               Our commitment to quality and timeless design ensures each piece

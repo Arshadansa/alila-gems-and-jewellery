@@ -1,4 +1,3 @@
-import React from "react";
 import { FaShoppingBag, FaWhatsapp } from "react-icons/fa";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { GrFacebookOption } from "react-icons/gr";
@@ -79,16 +78,13 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <Link to="https://flowbite.com/" className="hover:underline">
-                    Flowbite
+                  <Link to="/" className="hover:underline">
+                    product_category_1
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Tailwind CSS
+                  <Link to="/" className="hover:underline">
+                    product_category_2
                   </Link>
                 </li>
               </ul>

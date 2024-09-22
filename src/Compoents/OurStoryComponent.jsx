@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-function OurStoryComponent({ h, desc, desc1, order, img }) {
+function OurStoryComponent({ h, desc, order, img }) {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
 
@@ -55,17 +55,18 @@ function OurStoryComponent({ h, desc, desc1, order, img }) {
   };
 
   const isOrderEven = order % 2 === 0;
+console.log(isOrderEven);
 
   return (
     <section>
       <div
         ref={sectionRef}
-        className={`my-10 flex  max-w-screen-xl mx-auto items-center ${
+        className={`my-10 p-3 lg:p-0 flex flex-col md:flex-row  max-w-screen-xl mx-auto items-center ${
           isOrderEven ? "flex-row" : "flex-row-reverse"
         }`}
       >
         <motion.div
-          className="w-1/2"
+          className="md:w-1/2"
           variants={imageVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -73,19 +74,23 @@ function OurStoryComponent({ h, desc, desc1, order, img }) {
           <img src={img} alt="Our Story" />
         </motion.div>
         <motion.div
-          className="w-1/2 h-full flex flex-col gap-3"
+          className="md:w-1/2 h-full flex items-center md:items-start flex-col gap-3"
           variants={contentVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <h2 className="text-white text-5xl">{h}</h2>
-          <p className="text-white text-lg">{desc}</p>
-          <p className="text-white text-lg">{desc1}</p>
-      <Link to="/">
-        <button className="border-2 mt-2 text-md w-fit py-2 px-8 rounded-sm hover:underline border-buttonborder  bg-black text-white">
-          View Our Desgin
-        </button>
-      </Link>
+          <h2 className="text-white text-center md:text-left text-3xl md:text-5xl">
+            {h}
+          </h2>
+          <p className="text-white text-justify md:text-left md:text-lg">
+            {desc}
+          </p>
+
+          <Link to="/" aria-label="View our designs">
+            <button className="border-2 mt-2  text-md w-fit py-2 px-8 rounded-sm hover:underline border-buttonborder  bg-black text-white">
+              View Our Desgin
+            </button>
+          </Link>
         </motion.div>
       </div>
       <hr className="border mt-5 border-red-500 w-32 mx-auto" />

@@ -6,14 +6,16 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 function TopContact() {
   return (
-    <section className="">
+    <section>
       <div className="max-w-screen-xl  relative z-30 flex items-center justify-between px-6 py-3 mx-auto ">
         <div>
-          <span className="text-white">15 Harakon st. Ramat Gan</span>
+          <span className="text-white">
+            City Center Complex Jaipur-302001 (Raj.) Ind.
+          </span>
         </div>
         <div className="flex  gap-1 items-center">
           <div>
-            <MdOutlineMailOutline size={20} className="text-white"/>
+            <MdOutlineMailOutline size={20} className="text-white" />
           </div>
           <div>
             <GrFacebookOption size={20} className="text-white" />
@@ -22,11 +24,11 @@ function TopContact() {
             <IoLogoInstagram size={20} className="text-white" />
           </div>
           <div>
-            <FaWhatsapp size={20} className="text-white"/>
+            <FaWhatsapp size={20} className="text-white" />
           </div>
         </div>
         <div>
-          <span className="text-white">+972-54-9929997</span>
+          <span className="text-white">+91-9667949211</span>
         </div>
         <div>
           <button

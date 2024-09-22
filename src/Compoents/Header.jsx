@@ -4,9 +4,8 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <section>
+    <section className="hidden md:block">
       <TopContact />
-      {/* <Navbar /> */}
     </section>
   );
 }

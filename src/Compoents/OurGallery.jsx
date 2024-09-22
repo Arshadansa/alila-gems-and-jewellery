@@ -38,14 +38,14 @@ function OurGallery() {
   };
 
   return (
-    <section ref={sectionRef} className="pb-16">
+    <section ref={sectionRef} className="pb-32 lg:pb-16">
       <div className="max-w-screen-full mx-auto  ">
         <div className="text-center pb-4 bg-gradient-to-t from-[#381a4b] via-[#11021c] to-transparent">
           <motion.h3
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={headingVariants}
-            className="text-white leading-relaxed text-5xl"
+            className="text-white leading-relaxed text-3xl md:text-5xl"
           >
             Explore Our Gallery
           </motion.h3>
@@ -55,7 +55,7 @@ function OurGallery() {
           </span>
           <hr className="border mt-5 border-red-500 w-32 mx-auto" />
         </div>
-        <div className=" max-w-screen-xl overflow-hidden mx-auto">
+        <div className=" max-w-screen-full overflow-hidden mx-auto">
           <Silder />
         </div>
       </div>
