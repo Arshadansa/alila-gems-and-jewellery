@@ -145,7 +145,7 @@ function Footer() {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <Link to="/" className="hover:underline hover:text-primary">
-              Alilaaa gems and jewellery™
+              Alila gems and jewellery™
             </Link>
             . All Rights Reserved.
           </span>
